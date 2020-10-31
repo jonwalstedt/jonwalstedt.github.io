@@ -14,7 +14,7 @@ interface SidebarDecorationProps {
 
 const SidebarDecoration = ({ pages }: SidebarDecorationProps): JSX.Element => {
   const item = pages.find((image) => image.isActive);
-  const offset = item.index * IMAGE_WIDTH;
+  const offset = item ? item.index * IMAGE_WIDTH : 0;
 
   const listStyle = {
     transform: `translateX(-${offset}px)`,
