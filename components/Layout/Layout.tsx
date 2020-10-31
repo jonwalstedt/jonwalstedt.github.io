@@ -51,12 +51,12 @@ const Layout = ({ children }: Props): JSX.Element => {
         <div id="banner" />
         <MainMenu pages={pages} />
       </header>
-      <main>
+      <main className={styles.main}>
         <section className={styles.sidebar}>
           <SidebarDecoration pages={pages} />
           <div id="submenu" />
         </section>
-        <section>{children}</section>
+        <section className={styles.pageContent}>{children}</section>
       </main>
       <footer>
         <hr />
