@@ -1,18 +1,35 @@
+.contentWrapper {
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   position: relative;
   display: flex;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
   transform: translateX(calc(var(--sidebar-width) * -1));
   width: calc(100vw + var(--sidebar-width));
+  will-change: transform;
+  flex: 1;
+}
+
+.mainSubmenuOpen {
+  composes: main;
+  transform: translateX(0);
 }
 
 .sidebar {
-  background: var(--color-dark-grey);
+  background-color: var(--color-darkest-grey);
   width: var(--sidebar-width);
+  flex: none;
 }
 
 .pageContent {
-  background: pink;
+  padding: calc(var(--gutter) * 2);
+  width: 100vw;
 }
 
 @media screen and (min-width: 780px) {

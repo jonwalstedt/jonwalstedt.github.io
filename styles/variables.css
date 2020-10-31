@@ -3,6 +3,11 @@
   --gutter: 8px;
   --sidebar-width: 260px;
 
+  --sidebar-decoration-width: var(--sidebar-width);
+  --sidebar-decoration-height: 220px;
+
+  --color-white: #fff;
+  --color-darkest-grey: #333333;
   --color-darker-grey: #4d4d4d;
   --color-dark-grey: #dddcdc;
   --color-light-grey: #dddcdc;

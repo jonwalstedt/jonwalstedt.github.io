@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import { ICONS } from '../MainMenu/icons';
 import styles from './SidebarDecoration.module.css';
 
 const IMAGE_WIDTH = 260;
@@ -8,7 +8,7 @@ interface SidebarDecorationProps {
   pages: {
     index: number;
     isActive: boolean;
-    sidebarIcon: string;
+    rootSegment: string;
   }[];
 }
 
@@ -23,9 +23,9 @@ const SidebarDecoration = ({ pages }: SidebarDecorationProps): JSX.Element => {
   return (
     <div className={styles.sidebarDecoration}>
       <ul className={styles.list} style={listStyle}>
-        {pages.map(({ sidebarIcon }) => (
-          <li key={sidebarIcon} className={styles.item}>
-            <Image src={sidebarIcon} width={IMAGE_WIDTH} height={IMAGE_WIDTH} />
+        {pages.map((page) => (
+          <li key={`decoration-${page.rootSegment}`} className={styles.item}>
+            <div className={styles.icon}>{ICONS[page.rootSegment || 'me']}</div>
           </li>
         ))}
       </ul>

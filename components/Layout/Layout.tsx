@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useCallback, useState } from 'react';
 import Head from 'next/head';
 import SidebarDecoration from '../SidebarDecoration/SidebarDecoration';
 import { PAGES, PAGE_TITLE_SUFFIX } from '../pagesMeta';
@@ -12,6 +12,10 @@ interface Props {
 
 const Layout = ({ children }: Props): JSX.Element => {
   const router = useRouter();
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const handleSubmenuToggleClick = useCallback(() => {
+    setIsSubmenuOpen(!isSubmenuOpen);
+  }, [isSubmenuOpen]);
 
   const pages = PAGES.map(({ rootSegment, ...props }, index) => {
     const pattern = router.pathname === '/' ? `^\/$` : `^${router.pathname}`;
@@ -24,6 +28,8 @@ const Layout = ({ children }: Props): JSX.Element => {
       ...props,
     };
   });
+
+  console.log('isSubmenuOpen:', isSubmenuOpen);
 
   const activePage = pages.find((p) => p.isActive);
   const title = activePage
@@ -47,22 +53,33 @@ const Layout = ({ children }: Props): JSX.Element => {
           type="text/css"
         />
       </Head>
-      <header>
-        <div id="banner" />
-        <MainMenu pages={pages} />
-      </header>
-      <main className={styles.main}>
-        <section className={styles.sidebar}>
-          <SidebarDecoration pages={pages} />
-          <div id="submenu" />
-        </section>
-        <section className={styles.pageContent}>{children}</section>
-      </main>
-      <footer>
-        <hr />
-        <span>I&apos;m here to stay (Footer)</span>
-      </footer>
-      {/* Dont forget analytics */}
+      <div className={styles.contentWrapper}>
+        <header>
+          <div id="banner" />
+          <MainMenu pages={pages} />
+        </header>
+        <main className={isSubmenuOpen ? styles.mainSubmenuOpen : styles.main}>
+          <section className={styles.sidebar}>
+            <SidebarDecoration pages={pages} />
+            <div id="submenu" />
+          </section>
+          <section className={styles.pageContent}>
+            <button
+              type="button"
+              className={styles.toggleSubmenu}
+              onClick={handleSubmenuToggleClick}
+            >
+              Toggle submenu
+            </button>
+            {children}
+          </section>
+        </main>
+        <footer>
+          <hr />
+          <span>I&apos;m here to stay (Footer)</span>
+        </footer>
+        {/* Dont forget analytics */}
+      </div>
     </div>
   );
 };
