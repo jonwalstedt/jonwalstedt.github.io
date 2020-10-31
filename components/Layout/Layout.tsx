@@ -29,8 +29,6 @@ const Layout = ({ children }: Props): JSX.Element => {
     };
   });
 
-  console.log('isSubmenuOpen:', isSubmenuOpen);
-
   const activePage = pages.find((p) => p.isActive);
   const title = activePage
     ? `${activePage.title}${PAGE_TITLE_SUFFIX}`
