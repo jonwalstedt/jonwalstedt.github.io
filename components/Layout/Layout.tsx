@@ -5,6 +5,7 @@ import { PAGES, PAGE_TITLE_SUFFIX } from '../pagesMeta';
 import { useRouter } from 'next/dist/client/router';
 import MainMenu from '../MainMenu/MainMenu';
 import styles from './Layout.module.css';
+import Hamburger from '../Hamburger/Hamburger';
 
 interface Props {
   children?: ReactNode;
@@ -62,13 +63,10 @@ const Layout = ({ children }: Props): JSX.Element => {
             <div id="submenu" />
           </section>
           <section className={styles.pageContent}>
-            <button
-              type="button"
-              className={styles.toggleSubmenu}
+            <Hamburger
               onClick={handleSubmenuToggleClick}
-            >
-              Toggle submenu
-            </button>
+              isActive={isSubmenuOpen}
+            />
             {children}
           </section>
         </main>
