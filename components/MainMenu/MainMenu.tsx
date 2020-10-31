@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
+import { ICONS } from './icons';
+import styles from './MainMenu.module.css';
 
 export interface MainMenuItem {
   title: string;
   rootSegment: string;
+  isActive: boolean;
 }
 
 interface MainMenuProps {
@@ -12,12 +15,17 @@ interface MainMenuProps {
 
 const MainMenu = ({ pages }: MainMenuProps): JSX.Element => {
   return (
-    <nav>
-      <ul>
+    <nav className={styles.mainMenu}>
+      <ul className={styles.list}>
         {pages.map((page) => (
-          <li key={page.title}>
+          <li key={page.title} className={styles.listItem}>
             <Link href={`/${page.rootSegment}`}>
-              <a>{page.title}</a>
+              <a className={page.isActive ? styles.activeLink : styles.link}>
+                <span className={styles.icon}>
+                  {ICONS[page.rootSegment || 'me']}
+                </span>
+                {page.title}
+              </a>
             </Link>
           </li>
         ))}
