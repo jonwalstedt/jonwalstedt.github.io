@@ -3,7 +3,7 @@
   display: inline-block;
   overflow: visible;
   margin: 0;
-  padding: 15px;
+  padding: 8px;
   cursor: pointer;
   transition-timing-function: linear;
   transition-duration: 0.15s;
@@ -17,8 +17,8 @@
 .hamburgerBox {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 24px;
+  width: 22px;
+  height: 8px;
   vertical-align: middle;
 }
 
@@ -29,19 +29,19 @@
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition-duration: 0.13s;
   display: block;
-  margin-top: -2px;
+  margin-top: -1px;
 }
 
 .hamburgerInner,
 .hamburgerInner::before,
 .hamburgerInner::after {
   position: absolute;
-  width: 40px;
-  height: 4px;
+  width: 22px;
+  height: 2px;
   transition-timing-function: ease;
   transition-duration: 0.15s;
   transition-property: transform;
-  border-radius: 4px;
+  border-radius: 2px;
   background-color: var(--color-darker-grey);
 }
 
@@ -54,14 +54,13 @@
 .hamburgerInner::before {
   transition: top 0.12s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
     transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  top: -10px;
+  top: -5px;
 }
 
 .hamburgerInner::after {
-  top: -20px;
   transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
     opacity 0.1s linear;
-  bottom: -10px;
+  top: -10px;
 }
 
 .hamburgerActive {
@@ -71,7 +70,7 @@
 .hamburgerActive .hamburgerInner {
   transition-delay: 0.22s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transform: translate3d(0, -5px, 0) rotate(-45deg);
 }
 
 .hamburgerActive .hamburgerInner::before {

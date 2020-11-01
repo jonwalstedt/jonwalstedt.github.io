@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useState } from 'react';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 import SidebarDecoration from '../SidebarDecoration/SidebarDecoration';
 import { PAGES, PAGE_TITLE_SUFFIX } from '../pagesMeta';
@@ -19,8 +19,8 @@ const Layout = ({ children }: Props): JSX.Element => {
   }, [isSubmenuOpen]);
 
   const pages = PAGES.map(({ rootSegment, ...props }, index) => {
-    const pattern = router.pathname === '/' ? `^\/$` : `^${router.pathname}`;
-    const matches = `/${rootSegment}`.match(new RegExp(pattern, 'gi'));
+    const pattern = rootSegment === '' ? `^\/$` : `^\/${rootSegment}`;
+    const matches = router.pathname.match(new RegExp(pattern, 'gi'));
 
     return {
       index,
@@ -34,6 +34,10 @@ const Layout = ({ children }: Props): JSX.Element => {
   const title = activePage
     ? `${activePage.title}${PAGE_TITLE_SUFFIX}`
     : '404 Page could not be found';
+
+  useEffect(() => {
+    setIsSubmenuOpen(false);
+  }, [router.pathname]);
 
   return (
     <div>
@@ -66,14 +70,11 @@ const Layout = ({ children }: Props): JSX.Element => {
             <Hamburger
               onClick={handleSubmenuToggleClick}
               isActive={isSubmenuOpen}
+              className={styles.toggleSubmenu}
             />
             {children}
           </section>
         </main>
-        <footer>
-          <hr />
-          <span>I&apos;m here to stay (Footer)</span>
-        </footer>
         {/* Dont forget analytics */}
       </div>
     </div>

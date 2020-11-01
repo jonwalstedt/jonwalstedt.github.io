@@ -1,27 +1,23 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import styles from './Hamburger.module.css';
 
 interface HamburgerProps {
   isActive?: boolean;
   onClick: () => void;
+  className?: string;
 }
 
 const Hamburger = ({
   onClick,
   isActive = false,
+  className = '',
 }: HamburgerProps): JSX.Element => {
-  const [isActiveInternal, setIsActiveInternal] = useState(isActive);
-  const handleClick = useCallback(() => {
-    setIsActiveInternal(!isActiveInternal);
-    onClick();
-  }, [onClick, isActiveInternal]);
+  const classes = isActive
+    ? `${styles.hamburgerActive} ${className}`
+    : `${styles.hamburger} ${className}`;
 
   return (
-    <button
-      type="button"
-      className={isActiveInternal ? styles.hamburgerActive : styles.hamburger}
-      onClick={handleClick}
-    >
+    <button type="button" className={classes} onClick={onClick}>
       <span className={styles.hamburgerBox}>
         <span className={styles.hamburgerInner} />
       </span>
