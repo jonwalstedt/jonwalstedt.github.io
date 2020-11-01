@@ -1,17 +1,231 @@
 import Banner, { BannerItem } from '../components/Banner/Banner';
 import Submenu, {SubmenuItem} from '../components/Submenu/Submenu';
+import AlternateSection from '../components/AlternateSection/AlternateSection';
 
 <Banner>
   <BannerItem image="/images/jon.jpg" />
 </Banner >
 
 <Submenu>
-  <SubmenuItem name="Football field" to="/labs/football-field" />
-  <SubmenuItem name="Football field" to="/labs/football-field" />
-  <SubmenuItem name="Football field" to="/labs/football-field" />
-  <SubmenuItem name="Football field" to="/labs/football-field" />
-  <SubmenuItem name="Football field" to="/labs/football-field" />
+  <SubmenuItem name="About me" to="/cv#about" />
+  <SubmenuItem name="Skills" to="/cv#skills" />
+  <SubmenuItem name="King" to="/cv#king" />
+  <SubmenuItem name="SVT" to="/cv#svt" />
+  <SubmenuItem name="Thomas Cook" to="/cv#thomas-cook" />
+  <SubmenuItem name="Beamon People" to="/cv#beamon-people" />
+  <SubmenuItem name="Autodesk" to="/cv#autodesk" />
+  <SubmenuItem name="Kambi Sports Solutions" to="/cv#kambi" />
+  <SubmenuItem name="Thomas Cook" to="/cv#thomas-cook" />
+  <SubmenuItem name="Fantasy Interactive" to="/cv#fantasy" />
+  <SubmenuItem name="Noc webbyrå" to="/cv#noc" />
+  <SubmenuItem name="Ambient media" to="/cv#ambient" />
+  <SubmenuItem name="Södertörns högskola" to="/cv#sh" />
+  <SubmenuItem name="Lydmar hotell" to="/cv#lydmar" />
 </Submenu >
 
 
 # CV
+
+<AlternateSection
+  id="about"
+  title="About me"
+>
+
+I have extensive experience in web development and development of large-scale web applications. My focus is primarily on front-end development, javascript and frontend oriented architecture, but I also have great experience working visually with responsive designs, gui components, animations, node.js, css etc.
+
+I am a dedicated and careful programmer who appreciates good teamwork, agile working methods, mob and pair programming and code reviews.
+
+</AlternateSection>
+
+<AlternateSection
+  id="skills"
+  title="Skills"
+>
+
+Competence
+- Software Development
+- Functional Programming
+- Responsive Web Design
+- Web Architecture
+- Code review
+- User Interface
+- Agile Development / Scrum
+
+Example of assignments
+- Senior developer
+- Software developer
+- Front end developer
+
+Stack
+- Node.js
+- JavaScript
+- Typescript
+- PWA / SSR / SPA
+- React (All flavors)
+- Graphql
+- Google Cloud Platform
+- CSS / SCSS / LESS / BEM / CSSinJS
+- HTML5
+
+DX
+- End to end testing / Unit testing
+- Git
+- CI / Jenkins / Drone / Github / Gitlab
+- Backstage.io
+
+</AlternateSection>
+
+<AlternateSection
+  id="king"
+  title="King"
+  role="Senior Developer"
+  location="Stockholm"
+  duration="Aug 2020 - Present"
+  url="https://www.king.com"
+>
+
+</AlternateSection>
+
+<AlternateSection
+  id="svt"
+  title="SVT"
+  role="Developer"
+  location="Stockholm"
+  duration="Apr 2018 – Aug 2020"
+  url="https://www.svtplay.se/"
+>
+
+Between 2018 and 2020 I worked as a developer at SVT Play – developing their TV applications: Smart TV application (HBBTV), Apple TV and Android TV.
+
+The main responsibility is to develop a new Smart TV application using React and GraphQL. The application is written in TypeScript and compiled down to a HBBTV compatible format.
+
+</AlternateSection>
+
+<AlternateSection
+  id="thomas-cook"
+  title="Thomas Cook"
+  role="Front-end developer"
+  location="Stockholm"
+  duration="Feb 2018 – Mar 2018"
+  url="https://www.ving.se/"
+>
+
+I worked as a front end developer as a part of the UX team at Thomas Cook’s office in Stockholm. The team is responsible for developing components and designs for the traveling site ving.se.
+
+As a front-end developer in the team, I built independent components in React as part of the UI library used in many projects at Thomas Cook.
+
+My main task was to further develop the UI library with new components and to set up and run A / B tests using Optimizely.
+
+The work was done with functional programming in ES6 and components built in React. The CSS was written with the preprocessor SASS and the methodology BEM.
+
+</AlternateSection>
+
+<AlternateSection
+  id="beamon-people"
+  title="Beamon People"
+  role="Front-end developer"
+  location="Stockholm"
+  duration="Dec 2017 – 2018"
+  url="https://www.beamonpeople.se/"
+>
+
+In the winter of 2017 – 2018, I was involved in the development of Beamon People’s new website. The website is a web application where the front end solution is built with React and Redux.
+
+</AlternateSection>
+
+<AlternateSection
+  id="autodesk"
+  title="Autodesk"
+  role="Software developer"
+  location="Stockholm"
+  duration="Jan 2017 – Dec 2017"
+  url="https://www.autodesk.com/"
+>
+
+I worked as a software developer in the Tools team at Autodesk’s Stockholm office. The team was responsible for the development of all the plugins and editors included in the Stingray game engine – a 3D and real-time game engine used for games, visualizations, VR, AR, etc.
+
+My main task was to build the UI architecture used for Stingray’s new entity editor from the ground up. The entity editor is an editor for graphically managing entity hierarchies in the 3d engine.
+
+The work was done with functional programming in ES6, view management in Mithril (https://mithril.js.org/) and custom built state management inspired by Redux.
+
+Stingray https://www.autodesk.com/products/stingray/overview
+
+</AlternateSection>
+
+<AlternateSection
+  id="kambi"
+  title="Kambi Sports Solutions"
+  role="Front-end develope"
+  location="Stockholm"
+  duration="2013 – 2017"
+  url="http://www.kambi.com/"
+>
+
+Full time employee at Kambi Sports Solutions as a frontend developer. Hired to develop their betting client which is used by several clients in the gaming industry who all have their own custom ”skins”. The betting client is responsive and is also available in many different languages.
+
+</AlternateSection>
+
+<AlternateSection
+  id="fantasy"
+  title="Fantasy Interactive"
+  role="Front-end Develope"
+  location="Stockholm"
+  duration="2012 – 2013"
+  url="https://fantasy.co/"
+>
+
+Full time employee at Fantasy Interactive as a frontend developer. Technically, the focus was on javascript, HTML5 and CSS. Projects was built using Grunt, robol or ANT. Typically, we used coffeescript and sass to keep the project well-structured and then some suitable templating systems such as handlebars or mustache to handle the content. At Fi I worked with clients such as Google, Sony, Samsung, Pfizer, BET, Verizon, Sports Illustrated and others. I also worked with internal projects like the Fi blog, Fi experiments and Fi’s casestudies.
+
+</AlternateSection>
+
+<AlternateSection
+  id="noc"
+  title="Noc webbyrå"
+  role="Full-stack Developer"
+  location="Stockholm"
+  duration="2012"
+  url="http://nocweb.se/"
+>
+
+Full time employee at Noc webbyrå as a web developer and programer (both frontend and backend). Technically, the focus was on PHP, MySQL, HTML5, Javascript, CSS, SASS, LESS and {{mustache}}, working with frameworks and content management systems like Kohana, Drupal, WordPress etc. At Noc I worked with clients such as Volkswagen, Sectra, Buzzador, Schnoor and others.
+
+</AlternateSection>
+
+<AlternateSection
+  id="ambient"
+  title="Ambient media"
+  role="Full-stack Developer, web developer and educator"
+  location="Stockholm"
+  duration="2010 – 2012"
+  url="http://ambientmedia.se/"
+>
+
+Full time employee at Ambient Media as a programmer, web developer and educator with consulting assignments at Södertörn University. At Ambient Media I worked with both small and large projects for clients such as ComHem, Unionen, 1177.se, Inera, tonsillwebben.se and others.
+
+</AlternateSection>
+
+<AlternateSection
+  id="sh"
+  title="Södertörn University"
+  role="Lecturer Media Technology"
+  location="Stockholm"
+  duration="2010-2011"
+  url="http://www.sh.se"
+>
+
+Halftime employee at Södertörn University as a lecturer in the Department of Communication, Media and IT teaching in the following courses: Publicering via Internet (A-nivå 7.5hp), Interaktiva medier (A-nivå 7.5hp), Mobila tjänster och gränssnitt (C-nivå 7.5hp), Scriptprogrammering och avancerad Flash (B-nivå 7.5hp), Dynamiska webbplatser (B-nivå 7.5hp). This work also included the planning and development of new courses. After a while I went over to full time employment at Ambient media but continued teaching at the college as a consultant.
+
+</AlternateSection>
+
+<AlternateSection
+  id="lydmar"
+  title="Lydmar hotel"
+  role="Web developer"
+  location="Stockholm"
+  duration="2012"
+  url="https://www.lydmar.com"
+>
+
+During the summer of 2012 I did a major update on Lydmar Hotel’s website (http://www.lydmar.com/). The updates were mainly to restructure the backend solution to make it easier for the staff to work with the page. The page itself is based on wordpress and a part of the work was to redo the entire site structure and introducing custom post- and media types. Updates were also made to the site’s frontend. CV
+
+</AlternateSection>

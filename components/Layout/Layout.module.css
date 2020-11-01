@@ -1,6 +1,5 @@
 .contentWrapper {
   width: 100vw;
-  overflow: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +27,15 @@
 }
 
 .pageContent {
-  padding: calc(var(--gutter) * 2);
+  padding: var(--gutter2);
   width: 100vw;
 }
 
 @media screen and (min-width: 780px) {
+  .pageContent {
+    padding: var(--gutter2) var(--gutter4);
+  }
+
   .main {
     width: 100vw;
     transform: translateX(0);

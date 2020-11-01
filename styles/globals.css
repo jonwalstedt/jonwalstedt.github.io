@@ -11,22 +11,18 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   font-weight: 300;
 }
 
 p {
   font-size: 1.125rem;
   line-height: 1.5rem;
-  margin-bottom: calc(var(--gutter) * 2);
+  margin-bottom: var(--gutter2);
 }
 
 a {
-  color: inherit;
+  color: var(--color-light-blue);
   text-decoration: none;
 }
 
