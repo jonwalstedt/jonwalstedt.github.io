@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useCallback, useState } from 'react';
 import Portal from '../Portal/Portal';
 import styles from './Banner.module.css';
 
@@ -13,17 +13,16 @@ interface BannerIframeItemProps {
 
 const BannerIframeItem = ({ iframe }: BannerIframeItemProps): JSX.Element => {
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const iframeEl = document.createElement('iframe');
-  iframeEl.src = iframe;
-  iframeEl.onload = () => {
+  const handleIframeOnLoad = useCallback(() => {
     setIframeLoaded(true);
-  };
+  }, []);
 
   return (
     <iframe
       scrolling="no"
       src={`${iframe}?height=375&theme-id=1709&default-tab=js,result`}
       frameBorder="no"
+      onLoad={handleIframeOnLoad}
       style={{
         opacity: iframeLoaded ? 1 : 0,
       }}
