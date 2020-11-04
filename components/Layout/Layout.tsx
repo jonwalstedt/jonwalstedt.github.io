@@ -46,12 +46,12 @@ const Layout = ({ children }: Props): JSX.Element => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
-          href="http://fonts.googleapis.com/css?family=Titillium+Web:600"
+          href="https://fonts.googleapis.com/css?family=Titillium+Web:600"
           rel="stylesheet"
           type="text/css"
         />
         <link
-          href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700"
+          href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700"
           rel="stylesheet"
           type="text/css"
         />
