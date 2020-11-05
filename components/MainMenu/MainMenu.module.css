@@ -15,7 +15,7 @@
 .listItem {
   width: 100%;
   flex: 1 1 auto;
-  height: 40px;
+  height: 50px;
   min-width: 20%;
 }
 
@@ -65,11 +65,18 @@
   fill: var(--color-menu-icon-active);
 }
 
+@media screen and (min-width: 560px) {
+  .listItem {
+    height: 60px;
+  }
+}
+
 @media screen and (min-width: 780px) {
   .listItem {
     width: auto;
     flex: none;
     min-width: 0;
+    height: 40px;
   }
 
   .link {
