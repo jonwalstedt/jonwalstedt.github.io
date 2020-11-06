@@ -40,21 +40,21 @@ const Layout = ({ children }: Props): JSX.Element => {
   }, [router.pathname]);
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
+        <link rel="manifest" href="/manifest.json" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Titillium+Web:600"
-          rel="stylesheet"
-          type="text/css"
+        <meta
+          name="description"
+          content="I'm front end developer and problem solver with a big passion for anything related to the web."
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700"
-          rel="stylesheet"
-          type="text/css"
+        <meta
+          name="keywords"
+          content="Jon Wålstedt, Senior developer, JavaScript, Typescript, CSS, Front-end, React"
         />
+        <meta name="author" content="Jon Wålstedt" />
       </Head>
       <div className={styles.contentWrapper}>
         <header>
@@ -77,7 +77,7 @@ const Layout = ({ children }: Props): JSX.Element => {
         </main>
         {/* Dont forget analytics */}
       </div>
-    </div>
+    </>
   );
 };
 

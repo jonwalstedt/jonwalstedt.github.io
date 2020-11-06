@@ -17,7 +17,12 @@ const Hamburger = ({
     : `${styles.hamburger} ${className}`;
 
   return (
-    <button type="button" className={classes} onClick={onClick}>
+    <button
+      type="button"
+      className={classes}
+      onClick={onClick}
+      aria-label={isActive ? 'Close menu' : 'Show menu'}
+    >
       <span className={styles.hamburgerBox}>
         <span className={styles.hamburgerInner} />
       </span>
